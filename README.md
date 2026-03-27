@@ -1,7 +1,7 @@
 # README.md
 
-Claude-created program to read a file containing NMEA 0183 data and do initial
-parsing.
+Claude-created program to read a file containing NMEA 0183 data and do initial,
+very basic parsing.
 
 ## References
 

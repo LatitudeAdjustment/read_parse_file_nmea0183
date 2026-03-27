@@ -65,18 +65,21 @@ def parse_nmea(line):
         "checksum": checksum_str,
         "valid":    checksum_str == computed_str,                                                                     
     }
-                                                                                                                        
-                  
-# if __name__ == "__main__":
-#     examples = [
-#         "$GPGGA,123519,4807.038,N,01131.000,E,1,08,0.9,545.4,M,46.9,M,,*47",                                          
-#         "$GPRMC,220516,A,5133.82,N,00042.24,W,173.8,231.8,130694,004.2,W*70",                                         
-#         "$GPGLL,4916.45,N,12311.12,W,225444,A,*1D",                                                                   
-#     ]                                                                                                                 
-                                                                                                                        
-#     for sentence in examples:                                                                                         
-#         result = parse_nmea(sentence)
-#         print(result)                                                                                                     
-                                                                                                                        
-if __name__ == "__main__":                                                                                            
-    main() 
+
+# Set to 1 to use the example data below rather than an input file.
+USE_EXAMPLE_DATA = 0
+
+if USE_EXAMPLE_DATA:                  
+    if __name__ == "__main__":
+        examples = [
+            "$GPGGA,123519,4807.038,N,01131.000,E,1,08,0.9,545.4,M,46.9,M,,*47",                                          
+            "$GPRMC,220516,A,5133.82,N,00042.24,W,173.8,231.8,130694,004.2,W*70",                                         
+            "$GPGLL,4916.45,N,12311.12,W,225444,A,*1D",                                                                   
+        ]                                                                                                                 
+                                                                                                                            
+        for sentence in examples:                                                                                         
+            result = parse_nmea(sentence)
+            print(result)                                                                                                     
+else:                                                                                                                        
+    if __name__ == "__main__":                                                                                            
+        main() 
